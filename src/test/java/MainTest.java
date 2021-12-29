@@ -14,9 +14,13 @@ class MainTest {
 
         Main.welcomeScreen();
 
-        String expectedOutput = "Welcome to Amazing Numbers!\r\n\n"
-                + "Supported requests:\r\n"
+        String expectedOutput =
+                  "Supported requests:\r\n"
                 + "- enter a natural number to know its properties;\r\n"
+                + "- enter two natural numbers to obtain the properties of the list:\r\n"
+                + "  * the first parameter represents a starting number;\r\n"
+                + "  * the second parameter shows how many consecutive numbers are to be processed;\r\n"
+                + "- separate the parameters with one space;\r\n"
                 + "- enter 0 to exit.";
         assertEquals(expectedOutput, outContent.toString().trim());
     }

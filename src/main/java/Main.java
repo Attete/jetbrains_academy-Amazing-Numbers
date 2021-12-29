@@ -4,8 +4,10 @@ public class Main {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
+        System.out.println("Welcome to Amazing Numbers!\r\n\n");
         welcomeScreen();
         runAllAppMethods();
+
     }
 
     static void runAllAppMethods() {
@@ -61,10 +63,15 @@ public class Main {
     }
 
     static void welcomeScreen() {
-        System.out.println("Welcome to Amazing Numbers!\r\n\n"
-                + "Supported requests:\r\n"
-                + "- enter a natural number to know its properties;\r\n"
-                + "- enter 0 to exit.\n");
+        System.out.println(
+                "Supported requests:\r\n"
+                        + "- enter a natural number to know its properties;\r\n"
+                        + "- enter two natural numbers to obtain the properties of the list:\r\n"
+                        + "  * the first parameter represents a starting number;\r\n"
+                        + "  * the second parameter shows how many consecutive numbers are to be processed;\r\n"
+                        + "- separate the parameters with one space;\r\n"
+                        + "- enter 0 to exit.\n"
+        );
     }
 
     static void checkPalindromicNumber(long userInput) {
