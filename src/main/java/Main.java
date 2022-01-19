@@ -4,28 +4,28 @@ public class Main {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        System.out.println("Welcome to Amazing Numbers!\r\n\n");
+        System.out.println("Welcome to Amazing Numbers!\r\n");
         welcomeScreen();
         runAllAppMethods();
-
     }
 
     static void runAllAppMethods() {
         System.out.println("Enter a request:");
         long userInput = scanner.nextLong();
+
         System.out.println();
 
-        String stringInput = String.valueOf(userInput);
-
         if (userInput > 0) {
-            System.out.println("Properties of " + stringInput);
-            parityCheck(userInput);
+            System.out.println("Properties of " + userInput);
             isBuzz(userInput);
             duckNumberCheck(userInput);
             checkPalindromicNumber(userInput);
-            System.out.println();
+            checkGapfulNumber(userInput);
+            parityCheck(userInput);
 
+            System.out.println();
             runAllAppMethods();
+
         } else if (userInput < 0) {
             System.out.println("The first parameter should be a natural number or zero.");
             runAllAppMethods();
@@ -85,6 +85,25 @@ public class Main {
             System.out.println("palindromic: true");
         } else {
             System.out.println("palindromic: false");
+        }
+    }
+
+    public static void checkGapfulNumber(long userInput) {
+        String stringUserInput = String.valueOf(userInput);
+
+        String stringGapfulDivider = String.valueOf(stringUserInput.charAt(0))
+                + String.valueOf(stringUserInput.charAt(stringUserInput.length() - 1));
+
+        int intGapfulDivider = Integer.parseInt(stringGapfulDivider);
+
+        if (stringUserInput.length() < 3) {
+            System.out.println("gapful: false");
+        } else {
+            if (userInput % intGapfulDivider == 0) {
+                System.out.println("gapful: true");
+            } else {
+                System.out.println("gapful: false");
+            }
         }
     }
 }

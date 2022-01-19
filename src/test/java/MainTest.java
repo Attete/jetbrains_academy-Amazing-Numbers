@@ -160,4 +160,47 @@ class MainTest {
         assertEquals(expectedOutput, outContent.toString().trim());
     }
 
+    @Test
+    void checkGapfulNumberTest7880() {
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+
+        Main.checkGapfulNumber(7880);
+
+        String expectedOutput = "gapful: false";
+        assertEquals(expectedOutput, outContent.toString().trim());
+    }
+
+    @Test
+    void checkGapfulNumberTest7881() {
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+
+        Main.checkGapfulNumber(7881);
+
+        String expectedOutput = "gapful: true";
+        assertEquals(expectedOutput, outContent.toString().trim());
+    }
+
+    @Test
+    void checkGapfulNumberTest132() {
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+
+        Main.checkGapfulNumber(132);
+
+        String expectedOutput = "gapful: true";
+        assertEquals(expectedOutput, outContent.toString().trim());
+    }
+
+    @Test
+    void checkGapfulNumberTest12() {
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+
+        Main.checkGapfulNumber(12);
+
+        String expectedOutput = "gapful: false";
+        assertEquals(expectedOutput, outContent.toString().trim());
+    }
 }
