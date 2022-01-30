@@ -10,8 +10,9 @@ public class Main {
     }
 
     static void runAllAppMethods() {
+        long userInput = 0;
         System.out.println("Enter a request:");
-        long userInput = scanner.nextLong();
+        userInput = validateUserInput(userInput);
 
         System.out.println();
 
@@ -28,11 +29,24 @@ public class Main {
 
         } else if (userInput < 0) {
             System.out.println("The first parameter should be a natural number or zero.");
+            System.out.println();
             runAllAppMethods();
         } else {
             System.out.println("Goodbye!");
             System.exit(0);
         }
+    }
+
+    static long validateUserInput(long userInput) {
+        try {
+            userInput = Long.parseLong(scanner.next());
+        } catch (NumberFormatException e) {
+            System.out.println();
+            System.out.println("The first parameter should be a natural number or zero.");
+            System.out.println();
+            runAllAppMethods();
+        }
+        return userInput;
     }
 
     static void isBuzz(long userInput) {
